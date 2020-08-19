@@ -18,12 +18,10 @@ interface DepartmentDetailProps extends RouteComponentProps<{
 
 const DepartmentDetail: React.FC<DepartmentDetailProps> = ({match}) => {
     
-    /* Grab department and products from context*/
-    const departmentsCtxt = useContext( DepartmentsContext );
+   /* Grab context */
+    const departmentsCtxt = useContext( DepartmentsContext )
     const department = departmentsCtxt.departments.filter( dep => 
         dep.id == match.params.id)[0];
-
-    departmentsCtxt.setSelectedDepartmentId( department.id );
 
     const departmentProducts = departmentsCtxt.products.filter( product => Number(product.departmentId) == Number(department.id) );
 
