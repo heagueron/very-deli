@@ -1,0 +1,33 @@
+.HeroImage {
+    background-image: 
+        linear-gradient(
+            to bottom, 
+            rgba(245, 246, 252, 0.10), 
+            rgba(117, 19, 93, 0.53)
+            ),
+        url("./suchi.png");
+    background-color: #cccccc;
+    height: 370px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.HeroText1 {
+    text-align: left;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: green;
+}
+
+.HeroText2 {
+    text-align: center;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
