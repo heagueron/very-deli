@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { presentToast } from './toats';
 
 const config = {
     apiKey: "AIzaSyAlxDVrYReJG0osLDM2Mh75IocGr8MRb8w",
@@ -21,7 +22,7 @@ export async function loginUser(username: string, password: string){
         console.log(res);
         return true;
     }catch(error){
-        console.log(error);
+        presentToast(error.message,4000)
         return false;
     }
 
@@ -35,7 +36,7 @@ export async function registerUser(username: string, password: string){
         const res = await firebase.auth().createUserWithEmailAndPassword( email, password )
         return true;
     }catch(error){
-        console.log(error);
+        presentToast(error.message,4000)
         return false;
     }
 
