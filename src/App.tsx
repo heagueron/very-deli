@@ -43,6 +43,8 @@ import AllDepartments from './pages/AllDepartments/AllDepartments';
 import DepartmentDetail from './pages/DepartmentDetail/DepartmentDetail';
 import Product from './pages/Product/Product';
 import Kart from './pages/Kart/Kart';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 /* CONTEXT */
 import DepartmentsContextProvider from './data/DepartmentsContextProvider';
@@ -77,9 +79,17 @@ const App: React.FC = () => (
               <IonLabel>Departments</IonLabel>
             </IonItem>
           </IonMenuToggle>
+
+          <IonMenuToggle>
+            <IonItem routerLink="/login" routerDirection="none" lines="none">
+              <IonIcon color="medium" slot="start" icon={ personAddOutline }>
+              </IonIcon>
+              <IonLabel>Login</IonLabel>
+            </IonItem> 
+          </IonMenuToggle>
         
           <IonMenuToggle>
-            <IonItem>
+            <IonItem routerLink="/register" routerDirection="none" lines="none">
               <IonIcon color="medium" slot="start" icon={ personAddOutline }>
               </IonIcon>
               <IonLabel>Register</IonLabel>
@@ -102,6 +112,8 @@ const App: React.FC = () => (
           <Route path="/departments/:id" component={ DepartmentDetail } exact></Route>
           <Route path="/products/:id" component={ Product } exact></Route>
           <Route path="/kart" component={ Kart } exact></Route>
+          <Route path="/login" component={ Login } exact></Route>
+          <Route path="/register" component={ Register } exact></Route>
           <Redirect to="/" />
         </IonRouterOutlet>
 
